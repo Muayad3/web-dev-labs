@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lab 4c - Question 2</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <h1>Books</h1>
+    <p>Open Inspect - Console to see the output.</p>
+
+    <script>
+        // Load the JSON file
+        $.getJSON("books.json", function (data) {
+            let books = data.books;
+
+            // (a) Title of the first book
+            console.log("Title of the first book: " + books[0].title);
+
+            // (b) Author of the second book
+            console.log("Author of the second book: " + books[1].author);
+
+            // (c) Genres of all books
+            for (let i = 0; i < books.length; i++) {
+                console.log("Genres of " + books[i].title + ": " + books[i].genres.join(", "));
+            }
+        });
+    </script>
+</body>
+</html>
